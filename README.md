@@ -22,3 +22,13 @@ Shadow is a tool developed to replay files by capturing the output and input to 
 - Show input output as stream with history
 - Show memory map state with live updates
 - Show networks in wireshark like way 
+
+
+## Current State
+
+### IO
+
+### Memory Map
+
+### Networking
+
