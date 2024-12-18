@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+set -u
 
 for file in *.c; do
     base_name="${file%.c}"
