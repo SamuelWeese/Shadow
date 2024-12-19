@@ -43,7 +43,39 @@ Investigated:
 
 #### Hooks
 
-Another option could be hooking the different IO functions of a system. This does have the downside of being "more work".
+Another option could be hooking the different IO functions of a system. This does have the downside of being "more work". We could use [LD_PRELOAD](https://www.baeldung.com/linux/ld_preload-trick-what-is) to do this possibly.
+
+
+Functions to Hook:
+- [pipe](https://man7.org/linux/man-pages/man2/pipe.2.html)
+- [read](https://man7.org/linux/man-pages/man2/read.2.html)
+- [write](https://man7.org/linux/man-pages/man2/write.2.html)
+- [signal](https://man7.org/linux/man-pages/man2/signal.2.html)
+- [sigaction](https://man7.org/linux/man-pages/man2/sigaction.2.html)
+- [msgget](https://man7.org/linux/man-pages/man2/msgget.2.html)
+- [msgsend](https://man7.org/linux/man-pages/man2/msgsend.2.html)
+- [msgrcv](https://man7.org/linux/man-pages/man2/msgrcv.2.html)
+- [shmget](https://man7.org/linux/man-pages/man2/shmget.2.html)
+- [shmat](https://man7.org/linux/man-pages/man2/shmat.2.html)
+- [shmdt](https://man7.org/linux/man-pages/man2/shmdt.2.html)
+- [semop](https://man7.org/linux/man-pages/man2/semop.2.html)
+- [semget](https://man7.org/linux/man-pages/man2/semget.2.html)
+- [semctl](https://man7.org/linux/man-pages/man2/semctl.2.html)
+- [dbus_connection_send](https://man7.org/linux/man-pages/man2/dbus_connection_send.2.html)
+- [dbus_connection_read](https://man7.org/linux/man-pages/man2/dbus_connection_read.2.html)
+- [inotify_add_watch](https://man7.org/linux/man-pages/man2/inotify_add_watch.2.html)
+- [inotify_add_watch](https://man7.org/linux/man-pages/man2/inotify_add_watch.2.html)
+
+This may or may not allow us to deal with things such as Procfs and Sysfs. I believe they are accessed through read, but I'm not certain. TODO test.
+
+
+#### eBPF
+
+TODO, not yet explored.
+
+#### Kernel Module
+
+TODO, probably overkill.
 
 ### Memory Map
 
