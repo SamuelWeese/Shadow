@@ -5,7 +5,7 @@ Shadow is a tool developed to replay files by capturing the output and input to 
 
 ## Planning
 
-[WhiteBoard](https://miro.com/app/board/uXjVL2dvQCc=/)
+[WhiteBoard]([https://miro.com/app/board/uXjVL2dvQCc=/](https://miro.com/app/board/uXjVL2dvQCc=/?share_link_id=128326230375))
 
 ## Stage 1
 
