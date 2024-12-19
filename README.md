@@ -64,7 +64,6 @@ Functions to Hook:
 - [dbus_connection_send](https://man7.org/linux/man-pages/man2/dbus_connection_send.2.html)
 - [dbus_connection_read](https://man7.org/linux/man-pages/man2/dbus_connection_read.2.html)
 - [inotify_add_watch](https://man7.org/linux/man-pages/man2/inotify_add_watch.2.html)
-- [inotify_add_watch](https://man7.org/linux/man-pages/man2/inotify_add_watch.2.html)
 
 This may or may not allow us to deal with things such as Procfs and Sysfs. I believe they are accessed through read, but I'm not certain. TODO test.
 
