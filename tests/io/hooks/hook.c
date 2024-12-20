@@ -1,5 +1,6 @@
 #ifndef __hooks
 #define __hooks
+#define _GNU_SOURCE
 #include <stdio.h>
 #include <stdlib.h>
 #include <dlfcn.h>
@@ -11,12 +12,13 @@
 #include <sys/sem.h>
 #include <sys/types.h>
 #include <string.h>
+#include <stdint.h>
 
 // Function pointers for original libc functions
 ssize_t (*original_read)(int fd, void *buf, size_t count);
 ssize_t (*original_write)(int fd, const void *buf, size_t count);
 int (*original_pipe)(int pipefd[2]);
-void (*original_signal)(int signum, void (*handler)(int));
+//void (*original_signal)(int signum, void (*handler)(int));
 int (*original_sigaction)(int signum, const struct sigaction *act, struct sigaction *oldact);
 int (*original_msgget)(key_t key, int msgflg);
 int (*original_msgsnd)(int msqid, const void *msgp, size_t msgsz, int msgflg);
@@ -48,12 +50,12 @@ int pipe(int pipefd[2]) {
     printf("[HOOK] pipe()\n");
     return original_pipe(pipefd);
 }
-
-void signal(int signum, void (*handler)(int)) {
+/*
+void (*signal(int signum, void (*handler)(int)))(int) {
     if (!original_signal) original_signal = dlsym(RTLD_NEXT, "signal");
     printf("[HOOK] signal(signum=%d)\n", signum);
-    original_signal(signum, handler);
-}
+    return original_signal(signum, handler);
+}*/
 
 int sigaction(int signum, const struct sigaction *act, struct sigaction *oldact) {
     if (!original_sigaction) original_sigaction = dlsym(RTLD_NEXT, "sigaction");
