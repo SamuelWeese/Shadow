@@ -67,6 +67,10 @@ Functions to Hook:
 
 This may or may not allow us to deal with things such as Procfs and Sysfs. I believe they are accessed through read, but I'm not certain. TODO test.
 
+###### HOOK EVERYTHING!
+
+Realistically, if we go down the hooking route, we should hook everything, and just do it dynamically. This also fixes the issues of the system using some form of unaccounted for library that I was too stupid to not forsee.
+
 
 #### eBPF
 
